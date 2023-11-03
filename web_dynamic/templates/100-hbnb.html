@@ -1,4 +1,3 @@
-S
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -10,7 +9,7 @@ S
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
     <title>HBnB</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="static/scripts/4-hbnb.js?{{ cache_id }}"></script>
+	<script src="static/scripts/100-hbnb.js?{{ cache_id }}"></script>
   </head>
   <body>
     <header>
@@ -28,10 +27,11 @@ S
 	    <ul>
 	      {% for state in states %}
 	      <li>
+		<input type="checkbox" data-id="{{ state[0].id }}" data-name="{{ state[0].name }}" data-type='state'>
 		<h2>{{ state[0].name }}:</h2>
 		<ul>
 		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
+		  <li><input type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}" data-type='city'> {{ city.name }}</li>
 		  {% endfor %}
 		</ul>
 	      </li>
