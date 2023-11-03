@@ -1,4 +1,4 @@
-document.ready(function () {
+$(document).ready(function () {
 	const amenities = {};
 	$("li input[type=checkbox]").change(function () {
 		if (this.checked) {
@@ -21,7 +21,7 @@ document.ready(function () {
 	// fetch data about places
 	//fetch
 	$.post({
-		url: `${HOST}/api/v1/places_search`,
+		url: `http://0.0.0.0:5001/api/v1/places_search`,
 		data: JSON.stringify({}),
 		headers: {
 			"Content-Type": "application/json",
